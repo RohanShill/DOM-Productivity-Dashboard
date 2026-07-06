@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productivity Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Dashboard-->
+
+    <main class="dashboard">
+     <header class="dashboard-header">
+        <h1>Productivity Dashboard</h1>
+
+        <button id="themeBtn">
+          <i class="ri-sun-line"></i>
+        </button>
+      </header>
+
+      <section class="top-widgets">
+        <!-- Weather Card -->
+
+        <div class="weather-box">
+          <div class="weather-left">
+            <div class="weather-icon">
+              <i class="ri-sun-cloudy-line"></i>
+            </div>
+
+            <div class="weather-details">
+              <h1 id="temperature">28°C</h1>
+
+              <h3 id="condition">Partly Cloudy</h3>
+
+              <p class="location">
+                <i class="ri-map-pin-line"></i>
+
+                <span id="location">New Delhi, India</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="weather-divider"></div>
+
+          <div class="weather-right">
+            <div class="weather-item">
+              <span>
+                <i class="ri-drop-line"></i>
+
+                Humidity
+              </span>
+
+              <strong id="humidity">45%</strong>
+            </div>
+
+            <div class="weather-item">
+              <span>
+                <i class="ri-windy-line"></i>
+
+                Wind
+              </span>
+
+              <strong id="wind">12 km/h</strong>
+            </div>
+
+            <div class="weather-item">
+              <span>
+                <i class="ri-temp-hot-line"></i>
+
+                Feels Like
+              </span>
+
+              <strong id="feelsLike">29°C</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Date Card -->
+
+        <div class="date-box">
+          <div class="date-info">
+            <h3 id="dayName">Wednesday</h3>
+
+            <h1 id="fullDate">21 May 2025</h1>
+
+            <p>
+              <i class="ri-calendar-line"></i>
+
+              Have a productive day!
+            </p>
+          </div>
+
+          <div class="clock-box">
+            <div class="clock-circle">
+              <i class="ri-time-line"></i>
+            </div>
+
+            <div id="liveTime">10:30 AM</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="feature-container">
+        <div class="feature-card" id="todoCard">
+          <i class="ri-task-line"></i>
+          <h2>Todo List</h2>
+          <p>Manage your daily tasks and stay organized.</p>
+          <i class="ri-arrow-right-line card-arrow"></i>
+        </div>
+        <div class="feature-card" id="plannerCard">
+          <i class="ri-calendar-schedule-line"></i>
+          <h2>Daily planner</h2>
+          <p>Plan every hour of your day efficiently.</p>
+          <i class="ri-arrow-right-line card-arrow"></i>
+        </div>
+        <div class="feature-card" id="goalCard">
+          <i class="ri-focus-3-line"></i>
+          <h2>Daily Goals</h2>
+          <p>Track your progress and complete goals.</p>
+          <i class="ri-arrow-right-line card-arrow"></i>
+        </div>
+        <div class="feature-card" id="quoteCard">
+          <i class="ri-lightbulb-flash-line"></i>
+          <h2>Motivation</h2>
+          <p>Read inspiring quotes every day.</p>
+          <i class="ri-arrow-right-line card-arrow"></i>
+        </div>
+
+        <div class="feature-card" id="pomoCard">
+          <i class="ri-timer-line"></i>
+          <h2>Pomodoro Timer</h2>
+          <p>Stay focused using the Pomodoro technique.</p>
+          <i class="ri-arrow-right-line card-arrow"></i>
+        </div>
+      </section>
+
+      <!--To-do-->
+      <section class="page" id="todoPage"></section>
+
+      <!-- Planner -->
+
+      <section class="page" id="plannerPage"></section>
+
+      <!--  Goals  -->
+
+      <section class="page" id="goalPage"></section>
+
+      <!--  Motivation  -->
+
+      <section class="page" id="quotePage"></section>
+
+      <!-- Pomodoro -->
+
+      <section class="page" id="pomoPage"></section>
+    </main>
+  </body>
+</html>
