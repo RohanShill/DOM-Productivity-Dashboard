@@ -1088,8 +1088,10 @@ input, button, textarea {
 }
 
 .app-footer {
-  text-align: center;
-  margin-top: 20px;
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .app-footer a {
