@@ -824,22 +824,12 @@ function playBeep() {
     return;
   }
   try {
-    var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    var oscillator = audioCtx.createOscillator();
-    var gainNode = audioCtx.createGain();
-    
-    oscillator.type = "sine";
-    oscillator.frequency.setValueAtTime(880, audioCtx.currentTime); 
-    
-    gainNode.gain.setValueAtTime(0.2, audioCtx.currentTime);
-    gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 1.2);
-    
-    oscillator.connect(gainNode);
-    gainNode.connect(audioCtx.destination);
-    
-    oscillator.start();
-    oscillator.stop(audioCtx.currentTime + 1.5);
-  } catch (err) {
+    var context = new AudioContext();
+    var osc = context.createOscillator();
+    osc.connect(context.destination);
+    osc.start();
+    osc.stop(context.currentTime + 1);
+  } catch (e) {
     
   }
 }
