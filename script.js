@@ -645,6 +645,16 @@ function fetchQuote() {
   quoteTextWrapper.style.display = "none";
   quoteLoading.style.display = "block";
   
+  var fetchCompleted = false;
+  
+  setTimeout(function() {
+    if (!fetchCompleted) {
+      useLocalQuote();
+      quoteLoading.style.display = "none";
+      quoteTextWrapper.style.display = "block";
+    }
+  }, 2500);
+  
   fetch("https://api.allorigins.win/get?url=https://zenquotes.io/api/random")
     .then(function(res) {
       if (!res.ok) {
@@ -653,6 +663,7 @@ function fetchQuote() {
       return res.json();
     })
     .then(function(data) {
+      fetchCompleted = true;
       var parsed = JSON.parse(data.contents);
       if (parsed && parsed[0]) {
         quoteText.textContent = '"' + parsed[0].q + '"';
@@ -660,11 +671,12 @@ function fetchQuote() {
       } else {
         useLocalQuote();
       }
+      quoteLoading.style.display = "none";
+      quoteTextWrapper.style.display = "block";
     })
     .catch(function() {
+      fetchCompleted = true;
       useLocalQuote();
-    })
-    .finally(function() {
       quoteLoading.style.display = "none";
       quoteTextWrapper.style.display = "block";
     });
