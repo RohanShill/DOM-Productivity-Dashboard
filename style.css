@@ -1086,3 +1086,23 @@ input, button, textarea {
 .hidden {
   display: none !important;
 }
+
+.app-footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.app-footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.app-footer a:hover {
+  color: var(--primary);
+}
